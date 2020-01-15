@@ -25,23 +25,27 @@ class BoxList extends Component {
     });
   }
 
-  render() {
-    const boxes = this.state.boxes.map(box => (
-      <Box
-        key={box.id}
-        id={box.id}
-        width={box.width}
-        height={box.height}
-        backgroundColor={box.backgroundColor}
-        removeBox={this.removeBox}
-      />
-    ));
+  renderBox() {
+    return (
+      this.state.boxes.map(box => (
+        <Box
+          key={box.id}
+          id={box.id}
+          width={box.width}
+          height={box.height}
+          backgroundColor={box.backgroundColor}
+          removeBox={this.removeBox}
+        />
+      ))
+    )
+  }
 
+  render() {
     return (
       <div>
         <h1>Creat New Box!!</h1>
         <NewBoxForm createBox={this.createBox} />
-        {boxes}
+        {this.renderBox()}
       </div>
     );
   }

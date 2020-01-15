@@ -6,7 +6,6 @@ class Box extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
   
-  
   handleClick() {
     this.props.removeBox(this.props.id)
   }
@@ -25,7 +24,6 @@ class Box extends Component {
       </div>
     )
   }
-  
 }
 
 export default Box
